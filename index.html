@@ -505,28 +505,101 @@ footer::before{
 #toTop:hover{transform:translateY(-5px);}
 #toTop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- RESPONSIVE & MOBILE POLISH ---------- */
+.filters-sticky-wrap{width:100%;}
 @media(max-width:1024px){
   .footer-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:860px){
   .nav-links{display:none;}
   .burger{display:flex;}
-  .stats{grid-template-columns:repeat(2,1fr);gap:24px;margin-top:10px;}
+  .stats{grid-template-columns:repeat(2,1fr);gap:18px;margin-top:10px;padding:24px 18px;}
   .stat:nth-child(2)::after{display:none;}
   .stat:nth-child(3)::after{display:none;}
-  .hero h1{font-size:clamp(2.6rem,9vw,3.6rem);}
+  .hero h1{font-size:clamp(2.4rem,8vw,3.6rem);}
   .logo-mark{width:150px;height:150px;}
 }
-@media(max-width:560px){
-  .menu-wrap{padding-left:4%;padding-right:4%;}
-  .menu-grid{grid-template-columns:1fr;}
-  .cta-banner{padding:46px 28px;}
-  .footer-grid{grid-template-columns:1fr;gap:36px;}
-  .filters{gap:9px;}
-  .filter-btn{padding:10px 18px;font-size:.72rem;}
-  #toTop{width:44px;height:44px;bottom:20px;right:20px;}
+@media(max-width:768px){
+  nav{padding:14px 5%;}
+  nav.scrolled{padding:10px 5%;}
+  .nav-logo{font-size:1.1rem;}
+  .nav-logo-img{width:32px;height:32px;}
+  .cube-mark{width:22px;height:22px;}
+  
+  .hero{min-height:auto;padding:105px 18px 45px;}
+  .logo-mark{width:130px;height:130px;margin-bottom:18px;box-shadow:0 16px 40px rgba(110,27,51,.25), 0 0 0 6px #fff, 0 0 0 8px rgba(224,177,94,.5);}
+  .hero .eyebrow{font-size:.7rem;letter-spacing:4px;}
+  .hero .eyebrow::before,.hero .eyebrow::after{width:20px;}
+  .hero h1{font-size:clamp(2.2rem,8vw,3.1rem);letter-spacing:-0.5px;}
+  .hero .subtitle{letter-spacing:3px;font-size:.8rem;margin-top:12px;}
+  .hero .divider{margin:20px auto;width:60px;}
+  .hero .tagline{font-size:1.15rem;padding:0 8px;line-height:1.5;}
+  .hero-ctas{width:100%;flex-direction:column;gap:12px;padding:0 8px;margin-top:28px;}
+  .btn{width:100%;justify-content:center;padding:14px 24px;font-size:.85rem;min-height:48px;}
+  .scroll-indicator{display:none;}
+
+  .stats{grid-template-columns:repeat(2,1fr);gap:16px;margin:10px 16px 0;padding:20px 14px;border-radius:18px;}
+  .stat .num{font-size:1.8rem;}
+  .stat .label{font-size:.65rem;letter-spacing:1.8px;}
+
+  .section-head{padding:55px 18px 0;}
+  .section-head h2{font-size:clamp(2rem,7vw,2.7rem);}
+  .section-head .eyebrow{font-size:1.15rem;}
+
+  .filters-sticky-wrap{
+    position:sticky;top:54px;z-index:900;
+    background:rgba(250,245,236,.95);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(110,27,51,.08);
+    box-shadow:0 8px 20px -10px rgba(36,24,17,.12);
+    margin:15px 0 20px;padding:8px 0;
+  }
+  .filters{
+    flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;
+    padding:4px 16px;gap:8px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .filters::-webkit-scrollbar{display:none;}
+  .filter-btn{
+    flex-shrink:0;white-space:nowrap;padding:10px 18px;font-size:.76rem;
+    letter-spacing:1px;min-height:42px;display:inline-flex;align-items:center;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .menu-wrap{padding-left:4%;padding-right:4%;padding-bottom:50px;}
+  .menu-grid{grid-template-columns:1fr;gap:18px;}
+  .card{border-radius:18px;}
+  .card-top{padding:20px 20px 0;gap:12px;}
+  .card-body{padding:0 20px 20px;}
+  .card h3{font-size:1.22rem;}
+  .price{font-size:1.18rem;}
+  .card p{font-size:1.05rem;}
+  .tag,.badge{padding:4px 10px;font-size:.62rem;letter-spacing:1.2px;}
+
+  .strip{padding:60px 6%;}
+  .strip h2{font-size:1.3rem;line-height:1.5;}
+  .strip .quote-mark{font-size:3.5rem;margin-bottom:16px;}
+
+  .reasons{padding:45px 5% 10px;gap:16px;}
+  .reason{padding:26px 20px;border-radius:18px;}
+  .reason .icon{width:56px;height:56px;margin-bottom:14px;}
+  .reason .icon svg{width:24px;height:24px;}
+  .reason h4{font-size:1.1rem;}
+  .reason p{font-size:1rem;}
+
+  .cta-banner{padding:36px 22px;margin:35px 4% 50px;border-radius:24px;text-align:center;}
+  .cta-banner h3{font-size:1.75rem;}
+  .cta-banner p{font-size:1.05rem;}
+  .cta-banner .btn{margin-top:16px;}
+
+  .footer-grid{grid-template-columns:1fr;gap:32px;padding-bottom:36px;}
+  footer{padding:55px 5% 24px;}
+  .footer-brand p{max-width:100%;}
+
+  #toTop{width:46px;height:46px;bottom:calc(18px + env(safe-area-inset-bottom, 0px));right:18px;}
 }
+button, a, .card{ -webkit-tap-highlight-color: transparent; }
+
 </style>
 </head>
 <body>
@@ -604,7 +677,9 @@ footer::before{
   <div class="rule"></div>
 </div>
 
-<div class="filters" id="filters"></div>
+<div class="filters-sticky-wrap">
+  <div class="filters" id="filters"></div>
+</div>
 
 <div class="menu-wrap">
   <div class="menu-grid" id="menuGrid"></div>
@@ -805,6 +880,9 @@ function renderCards(cat){
 function setFilter(cat, btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  if(window.innerWidth <= 768){
+    btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  }
   gridEl.classList.add('fading');
   setTimeout(()=>{
     renderCards(cat);
